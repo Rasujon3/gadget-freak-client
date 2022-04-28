@@ -7,7 +7,7 @@ const OrderList = () => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    const url = `http://localhost:5000/orderList`;
+    const url = `https://gadget-freak-sujon.herokuapp.com/orderList`;
     fetch(url, {
       headers: {
         authorization: `${user?.email} ${localStorage.getItem("accessToken")}`,

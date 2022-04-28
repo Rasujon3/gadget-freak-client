@@ -10,7 +10,7 @@ const UploadProduct = () => {
     const name = event.target.name.value;
     const price = event.target.price.value;
 
-    const url = `http://localhost:5000/uploadPd`;
+    const url = `https://gadget-freak-sujon.herokuapp.com/uploadPd`;
     fetch(url, {
       method: "POST",
       headers: {

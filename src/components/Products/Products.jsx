@@ -9,7 +9,7 @@ const Products = () => {
   const [user] = useAuthState(auth);
 
   useEffect(() => {
-    const url = `http://localhost:5000/products`;
+    const url = `https://gadget-freak-sujon.herokuapp.com/products`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setPorducts(data));
@@ -18,7 +18,7 @@ const Products = () => {
   const handleOrder = (product) => {
     const { name, price } = product;
     // console.log(product, user.email);
-    const url = `http://localhost:5000/addOrder`;
+    const url = `https://gadget-freak-sujon.herokuapp.com/addOrder`;
     fetch(url, {
       method: "POST",
       headers: {

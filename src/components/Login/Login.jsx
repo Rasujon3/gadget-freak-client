@@ -18,7 +18,7 @@ const Login = () => {
     signInWithGoogle();
   };
   if (user) {
-    const url = "http://localhost:5000/login";
+    const url = "https://gadget-freak-sujon.herokuapp.com/login";
 
     fetch(url, {
       method: "POST",
