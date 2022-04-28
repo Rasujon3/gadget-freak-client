@@ -58,7 +58,7 @@ const Navbar = () => {
                 <button
                   onClick={() => signOut(auth)}
                   type="button"
-                  class="btn btn-link text-decoration-none"
+                  className="btn btn-link text-decoration-none"
                 >
                   Sign Out
                 </button>

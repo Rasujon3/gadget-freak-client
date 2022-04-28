@@ -18,7 +18,22 @@ const Login = () => {
     signInWithGoogle();
   };
   if (user) {
-    navigate(from, { replace: true });
+    const url = "http://localhost:5000/login";
+
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        email: user?.email,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        localStorage.setItem("accessToken", data.token);
+        navigate(from, { replace: true });
+      });
   }
   return (
     <div className="container text-center mt-5">
