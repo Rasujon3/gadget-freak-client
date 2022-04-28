@@ -7,6 +7,8 @@ import OrderList from "./components/OrderList/OrderList";
 import Products from "./components/Products/Products";
 import UploadProduct from "./components/UploadProduct/UploadProduct";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -34,6 +36,7 @@ function App() {
         ></Route>
         <Route path="/login" element={<Login />}></Route>
       </Routes>
+      <ToastContainer />
     </div>
   );
 }

@@ -1,6 +1,10 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../Firebase/Firebase.init";
 
 const UploadProduct = () => {
+  const [user] = useAuthState(auth);
+
   const handleUpload = (event) => {
     event.preventDefault();
     const name = event.target.name.value;
@@ -10,6 +14,7 @@ const UploadProduct = () => {
     fetch(url, {
       method: "POST",
       headers: {
+        authorization: `${user?.email} ${localStorage.getItem("accessToken")}`,
         "content-type": "application/json",
       },
       body: JSON.stringify({ name, price }),
